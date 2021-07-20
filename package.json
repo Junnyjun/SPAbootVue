@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "nvm": "^0.0.4",
+    "request": "^2.88.2"
+  }
+}
