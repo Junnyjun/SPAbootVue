@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
 </head>
 <body class="is-preload">
 
@@ -18,7 +19,7 @@
         <a href="#" class="icon solid fa-home"><span>Home</span></a>
         <a href="#work" class="icon solid fa-info"><span>Info</span></a>
         <a href="#contact" class="icon solid fa-calendar"><span>Book</span></a>
-        <a href="#map" class="icon solid fa-map"><span>Map</span></a>
+        <a href="#mapTap" class="icon solid fa-map"><span>Map</span></a>
     </nav>
 
     <!-- Main -->
@@ -42,7 +43,7 @@
                 <h2>예약 </h2>
             </header>
             <p>
-               소개 가격 등 이미지
+                소개 가격 등 이미지
             </p>
             <section>
                 <div class="row">
@@ -113,6 +114,18 @@
                 </div>
             </form>
         </article>
+        <article id="mapTap" class="panel">
+
+            <header>
+                <h1>오시는 길</h1>
+                <p><a href="https://www.google.com/maps/place/%EA%B0%95%ED%99%94%EB%8F%84/@37.7131724,126.4336185,14z/data=!3m1!4b1!4m5!3m4!1s0x357c7a1c462df015:0xa525f2c6442523cb!8m2!3d37.7131742!4d126.4511281" class="jumplink pic"> 상세 주소 </a></p>
+
+            </header>
+            <hr>
+            <div id="map" style="width:100%; height: 100vh;"></div>
+            <hr>
+            <h1>쓸말 더있으면 여기 </h1>
+        </article>
 
     </div>
 
@@ -131,6 +144,22 @@
 <script src="/assets/js/breakpoints.min.js"></script>
 <script src="/assets/js/util.js"></script>
 <script src="/assets/js/main.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjZCCa-0rE7R__7Ez70jbnR-pqi9oMZuA&callback=initMap&region=kr"></script>
+<script>
+    function initMap() {
+      var seoul = { lat: 37.5642135 ,lng: 127.0016985 };
+      var map = new google.maps.Map(
+        document.getElementById('map'), {
+          zoom: 12,
+          center: seoul
+        });
+    new google.maps.Marker({
+        position: seoul,
+        map: map,
+        label: "서울 중심 좌표"
+        });
+    }
+  </script>
 
 </body>
 </html>

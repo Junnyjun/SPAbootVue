@@ -1403,6 +1403,10 @@ form :-ms-input-placeholder {
 
 /* Section/Article */
 
+article {
+    background-color: #FDF6F0;
+}
+
 section,
 article {
     margin-bottom: 3em;
