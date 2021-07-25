@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>이름, 전화번호로 찾기</h2>
+<form th:action="@{/findReserveByPhoneNumber}" method="post">
+    이름 : <input type="text" id="name" name="name"><br>
+    전화번호 : <input type="text" id="phoneNumber" name="phoneNumber"><br>
+    <input type="submit" value="전송">
+
+
+</form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>예약 번호로 찾기</h2>
+<form th:action="@{/findReserveById}" method="post">
+    예약 번호 : <input type="text" id="id" name="id"><br>
+    <input type="submit" value="전송">
+
+
+</form>
+</body>
+</html>

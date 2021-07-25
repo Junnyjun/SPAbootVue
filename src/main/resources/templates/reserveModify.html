@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>예약 변경</h2>
+<hr>
+<form th:action="@{'/reserveModify/' + ${id}}" method="post">
+  예약자 정보<br>
+  예약 번호 : <th:text>[[${dto.id}]]</th:text> <br>
+  예약자 이름 : <input type="text" id="name" name="name" th:value="${dto.name}"> <br>
+  예약자 전화번호 : <input type="text" id="phoneNumber" name="phoneNumber" th:value="${dto.phoneNumber}"> <br>
+  체크인 날짜 : <input type="date" id="checkInDate" name="checkInDate" th:value="${dto.checkInDate}"> <br>
+  체크아웃 날짜 : <input type="date" id="checkOutDate" name="checkOutDate" th:value="${dto.checkOutDate}"> <br>
+  <input type="submit" value="전송">
+</form>
+</body>
+</html>
