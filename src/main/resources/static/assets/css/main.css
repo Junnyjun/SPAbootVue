@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
 @import url("/assets/css/fontawesome-all.min.css");
 
 /*
@@ -1186,7 +1187,7 @@ body,
 input,
 textarea,
 select {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Hi Melody', cursive;
     font-weight: 300;
     color: #777777;
     font-size: 20pt;
@@ -1238,12 +1239,16 @@ h4,
 h5,
 h6 {
     font-weight: 400;
-    color: #363636;
+    color: #545454;
 }
 
 h1 {
     font-size: 2.4em;
     letter-spacing: -0.015em;
+}
+
+p {
+    color: #6a6a6a;
 }
 
 h2 {

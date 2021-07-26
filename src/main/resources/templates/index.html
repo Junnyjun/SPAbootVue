@@ -1,14 +1,22 @@
-
 <!DOCTYPE HTML>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>Astral by HTML5 UP</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/modal.css" />
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 </head>
+
 <body class="is-preload">
 
 <!-- Wrapper-->
@@ -92,27 +100,28 @@
             <header>
                 <h2>Contact Me</h2>
             </header>
-            <form action="#" method="post">
-                <div>
-                    <div class="row">
-                        <div class="col-6 col-12-medium">
-                            <input type="text" name="name" placeholder="Name" />
-                        </div>
-                        <div class="col-6 col-12-medium">
-                            <input type="text" name="email" placeholder="Email" />
-                        </div>
-                        <div class="col-12">
-                            <input type="text" name="subject" placeholder="Subject" />
-                        </div>
-                        <div class="col-12">
-                            <textarea name="message" placeholder="Message" rows="6"></textarea>
-                        </div>
-                        <div class="col-12">
-                            <input type="submit" value="Send Message" />
-                        </div>
+            <div>
+                <div class="row">
+                    <div class="col-6 col-12-medium">
+                        <button id="myBtn" class="btn btn-default">예약하기</button>
+                    </div>
+                    <div class="col-6 col-12-medium">
+                        <button id="myBtn2" class="btn btn-default">예약확인</button>
+                    </div>
+                    <div class="col-6 col-12-medium">
+                        <input type="text" name="email" placeholder="Email" />
+                    </div>
+                    <div class="col-12">
+                        <input type="text" name="subject" placeholder="Subject" />
+                    </div>
+                    <div class="col-12">
+                        <textarea name="message" placeholder="Message" rows="6"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <input type="submit" value="Send Message" />
                     </div>
                 </div>
-            </form>
+            </div>
         </article>
         <article id="mapTap" class="panel">
 
@@ -132,11 +141,72 @@
     <!-- Footer -->
     <div id="footer">
         <ul class="copyright">
-            <li>문의: 010-8888-8888.</li><li>Chbe5082@naver.com</a></li>
+            <li>문의: 010-8888-8888.</li>
+            <li>Chbe5082@naver.com</a>
+            </li>
         </ul>
     </div>
-
 </div>
+<!-- Trigger/Open The Modal -->
+
+<!-- The Modal // reserve-->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div id="modal-content" class="modal-content">
+        <span class="close">×</span>
+        <h3>펜션 예약</h3>
+        <form th:action="@{/reserve}" th:object="${reserveDTO}" method="post">
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">이름</span>
+                    <input type="text" id="name" th:field="*{name}" class="form-control" placeholder="Enter name" required>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon2">휴대폰번호</span>
+                    <input type="text" id="phoneNumber" th:field="*{name}" class="form-control" placeholder="01012345678" required>
+                </div>
+                <div class="input-group mb-3">
+                    날짜 :
+                    <input type="date" class="form-control" id="checkInDate" name="checkInDate" th:field="*{checkInDate}" required>
+                    <input type="date" class="form-control" id="checkOutDate" name="checkOutDate" th:field="*{checkOutDate}" required>
+                </div>
+            </div>
+            <small class="form-text text-muted"><span id="nameMsg"></span></small>
+            <div class="modal-footer border-top-0 d-flex justify-content-center">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<div id="myModal2" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">×</span>
+        <h3>예약 확인</h3>
+        <div class="modal-body">
+            <form th:action="@{/reserve}" method="post">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon3">예약번호</span>
+                    <input type="text" class="form-control" placeholder="Enter name" required>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon4">휴대폰번호</span>
+                    <input type="text" class="form-control" placeholder="01012345678" required>
+                </div>
+        <div class="modal-footer border-top-0 d-flex justify-content-center">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+        </form>
+        </div>
+        <textarea class="form-control" placeholder="예약번호 : @@@ 이름 : @@@ 전화번호: @@@ 예약날짜 1111/11/11 ~ 2222/22/22" readonly></textarea>
+    </div>
+</div>
+
+
+
 
 <!-- Scripts -->
 <script src="/assets/js/jquery.min.js"></script>
@@ -145,21 +215,11 @@
 <script src="/assets/js/util.js"></script>
 <script src="/assets/js/main.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjZCCa-0rE7R__7Ez70jbnR-pqi9oMZuA&callback=initMap&region=kr"></script>
-<script>
-    function initMap() {
-      var seoul = { lat: 37.5642135 ,lng: 127.0016985 };
-      var map = new google.maps.Map(
-        document.getElementById('map'), {
-          zoom: 12,
-          center: seoul
-        });
-    new google.maps.Marker({
-        position: seoul,
-        map: map,
-        label: "서울 중심 좌표"
-        });
-    }
-  </script>
+<script src="/assets/js/map.js"></script>
+<script src="/assets/js/modal.js"></script>
+<script src="/assets/js/jquery-3.0.0.min.js.js"></script>
+
 
 </body>
+
 </html>

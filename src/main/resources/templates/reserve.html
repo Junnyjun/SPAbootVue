@@ -8,10 +8,10 @@
 <body>
 <form th:action="@{/reserve}" th:object="${reserveDTO}" method="post">
     예약자 정보<br>
-    성명 : <input type="text" id="name" th:field="*{name}"><br>
-    휴대폰 번호 : <input type="text" id="phoneNumber" th:field="*{phoneNumber}"><br>
-    체크인 : <input type="date" id="checkInDate" name="checkInDate" th:field="*{checkInDate}"><br>
-    체크아웃 : <input type="date" id="checkOutDate" name="checkOutDate" th:field="*{checkOutDate}"><br>
+    성명 : <input type="text" id="name" th:field="*{name}" required><br>
+    휴대폰 번호 : <input type="number" id="phoneNumber" th:field="*{phoneNumber}" required><br>
+    체크인 : <input type="date" id="checkInDate" name="checkInDate" th:field="*{checkInDate}" required><br>
+    체크아웃 : <input type="date" id="checkOutDate" name="checkOutDate" th:field="*{checkOutDate}" required><br>
 
     <input type="submit" value="전송">
 
