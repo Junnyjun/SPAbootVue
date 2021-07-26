@@ -14,6 +14,8 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+
 
 </head>
 
@@ -55,40 +57,40 @@
             </p>
             <section>
                 <div class="row">
-                    <div class="col-4 col-6-medium col-12-small">
+                    <div class="col-4 col-6-medium">
                         <a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a>
                     </div>
-                    <div class="col-4 col-6-medium col-12-small">
+                    <div class="col-4 col-6-medium">
                         <a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
                     </div>
-                    <div class="col-4 col-6-medium col-12-small">
+                    <div class="col-4 col-6-medium">
                         <a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
                     </div>
-                    <div class="col-4 col-6-medium col-12-small">
+                    <div class="col-4 col-6-medium">
                         <a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a>
                     </div>
-                    <div class="col-4 col-6-medium col-12-small">
+                    <div class="col-4 col-6-medium">
                         <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
                     </div>
-                    <div class="col-4 col-6-medium col-12-small">
+                    <div class="col-4 col-6-medium">
                         <a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a>
                     </div>
-                    <div class="col-4 col-6-medium col-12-small">
+                    <div class="col-4 col-6-medium">
                         <a href="#" class="image fit"><img src="images/pic07.jpg" alt=""></a>
                     </div>
-                    <div class="col-4 col-6-medium col-12-small">
+                    <div class="col-4 col-6-medium">
                         <a href="#" class="image fit"><img src="images/pic08.jpg" alt=""></a>
                     </div>
-                    <div class="col-4 col-6-medium col-12-small">
+                    <div class="col-4 col-6-medium">
                         <a href="#" class="image fit"><img src="images/pic09.jpg" alt=""></a>
                     </div>
-                    <div class="col-4 col-6-medium col-12-small">
+                    <div class="col-4 col-6-medium">
                         <a href="#" class="image fit"><img src="images/pic10.jpg" alt=""></a>
                     </div>
-                    <div class="col-4 col-6-medium col-12-small">
+                    <div class="col-4 col-6-medium">
                         <a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
                     </div>
-                    <div class="col-4 col-6-medium col-12-small">
+                    <div class="col-4 col-6-medium">
                         <a href="#" class="image fit"><img src="images/pic12.jpg" alt=""></a>
                     </div>
                 </div>
@@ -98,27 +100,27 @@
         <!-- Contact -->
         <article id="contact" class="panel">
             <header>
-                <h2>Contact Me</h2>
+                <h4>예약하기</h4>
             </header>
             <div>
                 <div class="row">
-                    <div class="col-6 col-12-medium">
+                    <div class="col-6">
                         <button id="myBtn" class="btn btn-default">예약하기</button>
                     </div>
-                    <div class="col-6 col-12-medium">
+                    <div class="col-6">
                         <button id="myBtn2" class="btn btn-default">예약확인</button>
                     </div>
-                    <div class="col-6 col-12-medium">
-                        <input type="text" name="email" placeholder="Email" />
+                    <button id="myBtn3" class="btn btn-link">예약번호를 잃어버렸어요!</button>
+
+                    <div class="col-12">
+                        <h4>자주하는 질문 </h4><br>
+                        <button id="myBtn4" class="btn btn-link left">Q/A1</button>
                     </div>
                     <div class="col-12">
-                        <input type="text" name="subject" placeholder="Subject" />
+                        <button id="myBtn5" class="btn btn-link">Q/A2</button>
                     </div>
                     <div class="col-12">
-                        <textarea name="message" placeholder="Message" rows="6"></textarea>
-                    </div>
-                    <div class="col-12">
-                        <input type="submit" value="Send Message" />
+                        <button id="myBtn6" class="btn btn-link">Q/A3</button>
                     </div>
                 </div>
             </div>
@@ -154,16 +156,16 @@
     <!-- Modal content -->
     <div id="modal-content" class="modal-content">
         <span class="close">×</span>
-        <h3>펜션 예약</h3>
+        <h3>예약 하기</h3>
         <form th:action="@{/reserve}" th:object="${reserveDTO}" method="post">
             <div class="modal-body">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">이름</span>
-                    <input type="text" id="name" th:field="*{name}" class="form-control" placeholder="Enter name" required>
+                    <input type="text"  th:field="*{name}" class="form-control" placeholder="Enter name" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon2">휴대폰번호</span>
-                    <input type="text" id="phoneNumber" th:field="*{name}" class="form-control" placeholder="01012345678" required>
+                    <input type="text"  th:field="*{name}" class="form-control" placeholder="01012345678" required>
                 </div>
                 <div class="input-group mb-3">
                     날짜 :
@@ -202,8 +204,77 @@
         </form>
         </div>
         <textarea class="form-control" placeholder="예약번호 : @@@ 이름 : @@@ 전화번호: @@@ 예약날짜 1111/11/11 ~ 2222/22/22" readonly></textarea>
+        <h3>예약 변경</h3>
     </div>
 </div>
+
+<div id="myModal3" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">×</span>
+        <h3>예약 찾기</h3>
+        <div class="modal-body">
+            <h4>예약 번호로 찾기</h4>
+            <form th:action="@{/findReserveById}" method="post">
+                예약 번호 : <input type="text" id="id" name="id"><br>
+                <button type="submit" class="btn btn-default">찾기</button>
+            </form>
+
+            <h4>이름, 전화번호로 찾기</h4>
+            <form th:action="@{/findReserveByPhoneNumber}" method="post">
+                이름 : <input type="text" id="name" name="name"><br>
+                전화번호 : <input type="text" id="phoneNumber" name="phoneNumber"><br>
+                <button type="submit" class="btn btn-default">찾기</button>
+            </form>
+        </div>
+        <textarea class="form-control" placeholder="예약번호 : @@@ 이름 : @@@ 전화번호: @@@ 예약날짜 1111/11/11 ~ 2222/22/22" readonly></textarea>
+    </div>
+</div>
+
+<div id="myModal4" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">×</span>
+        <h3>Q/A 1</h3>
+        <div class="modal-body">
+            <h4>QA title</h4>
+            <h6>QA content</h6>
+
+        </div>
+
+    </div>
+</div>
+
+
+<div id="myModal5" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">×</span>
+        <h3>Q/A 1</h3>
+        <div class="modal-body">
+            <h4>QA title</h4>
+            <h6>QA content</h6>
+
+        </div>
+
+    </div>
+</div>
+
+
+<div id="myModal6" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">×</span>
+        <h3>Q/A 1</h3>
+        <div class="modal-body">
+            <h4>QA title</h4>
+            <h6>QA content</h6>
+
+        </div>
+
+    </div>
+</div>
+
 
 
 

@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
-@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
 @import url("/assets/css/fontawesome-all.min.css");
 
 /*
@@ -1187,7 +1186,7 @@ body,
 input,
 textarea,
 select {
-    font-family: 'Hi Melody', cursive;
+    font-family: 'Gaegu', cursive;
     font-weight: 300;
     color: #777777;
     font-size: 20pt;
