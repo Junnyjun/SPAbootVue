@@ -1,9 +1,9 @@
 version: 0.0
 os: linux
+
 files:
-  - source:  /
-    destination: /home/ec2-user/jenkins  # EC2 내부 배포 할 위치
-    overwrite: yes
+  - source: /
+    destination: /home/ec2-user/build
 
 permissions:
   - object: /
@@ -13,6 +13,6 @@ permissions:
 
 hooks:
   ApplicationStart:
-    - location: scripts/deploy.sh    # ApplicationStart 단계에서 해당 파일을 실행해라
+    - location: deploy.sh
       timeout: 60
       runas: ec2-user
