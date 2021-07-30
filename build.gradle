@@ -38,14 +38,3 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
-
-archivesBaseName = 'springboot-deploy'
-
-tasks.jar {
-	enabled = false
-}
-
-tasks.bootJar {
-	enabled = true
-	mainClassName = "com.example.demo.DemoApplication"
-}
