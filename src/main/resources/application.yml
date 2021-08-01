@@ -1,14 +1,7 @@
-spring:
-  profiles:
-    group:
-      "real1": "real1_port"
-
----
+server:
+  port: 8080
 
 spring:
-  config:
-    activate:
-      on-profile: "real1_port"
   datasource:
     url : jdbc:h2:tcp://localhost/~/SPAdev
     username: dev123
@@ -27,47 +20,8 @@ spring:
         default_batch_fetch_size : 50
         show_sql : true
         format_sql : true
-server:
-  port: 8081
 
 logging.level:
   org.hibernate.SQL: debug
   org.hibernate.type : trace
 
----
-
-spring:
-  profiles:
-    group:
-      "real2": "real2_port"
-
----
-
-spring:
-  config:
-    activate:
-      on-profile: "real2_port"
-  datasource:
-    url : jdbc:h2:tcp://localhost/~/SPAdev
-    username: dev123
-    password: dev123
-    driver-class-name: org.h2.Driver
-
-  thymeleaf:
-    cache: false
-    mode: LEGACYHTML5
-
-  jpa:
-    hibernate:
-      ddl-auto: create
-    properties:
-      hibernate:
-        default_batch_fetch_size : 50
-        show_sql : true
-        format_sql : true
-server:
-  port: 8082
-
-logging.level:
-  org.hibernate.SQL: debug
-  org.hibernate.type : trace
