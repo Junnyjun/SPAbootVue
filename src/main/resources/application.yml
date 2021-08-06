@@ -4,8 +4,8 @@ server:
 spring:
   datasource:
     url : jdbc:h2:tcp://localhost/~/SPAdev
-    username: dev123
-    password: dev123
+    username: dev30368643
+    password: dev30368643
     driver-class-name: org.h2.Driver
 
   thymeleaf:
