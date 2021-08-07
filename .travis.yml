@@ -18,9 +18,9 @@ script: "./gradlew clean build"
 before_install:
   - chmod +x gradlew
 before_deploy:
-  - zip -r springboot-webservice *
-  - mkdir -p deploy
-  - mv SPAbootVue.zip deploy/SPAbootVue.zip
+  - zip -r ./springboot-webservice *
+  - mkdir -p ./deploy
+  - mv ./SPAbootVue.zip ./deploy/SPAbootVue.zip
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
