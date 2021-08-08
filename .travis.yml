@@ -48,6 +48,7 @@ deploy:
       on:
         repo: Lee-ChangHee/SPAbootVue #Github 주소
         branch: master
+
 # CI 실행 완료시 메일로 알람
 notifications:
   email:
