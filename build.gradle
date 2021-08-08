@@ -3,6 +3,9 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
+jar {
+	enabled = false
+}
 
 group = 'com.example'
 version = '0.0.3-SNAPSHOT'
