@@ -3,6 +3,7 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/app/travis/build/
+    overwrtie: yes
 
 # 파일 권한 추가
 permission:
