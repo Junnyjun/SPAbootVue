@@ -18,7 +18,7 @@ script: "./gradlew clean build"
 before_install:
   - chmod +x gradlew
 before_deploy:
-  - zip -r springboot-webservice *
+  - zip -r SPAbootVue *
   - mkdir -p deploy
   - mv SPAbootVue.zip deploy/SPAbootVue.zip
 
