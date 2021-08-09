@@ -1,4 +1,4 @@
-package com.example.SPAdev;
+package com.example.SPAdev.config;
 
 import lombok.AllArgsConstructor;
 import org.springframework.core.env.Environment;
