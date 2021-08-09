@@ -12,7 +12,6 @@ public class SpAdevApplication{
 
 	public static void main(String[] args) {
 		new SpringApplicationBuilder(SpAdevApplication.class)
-				.properties(APPLICATION_LOCATIONS)
 				.run(args);
 	}
 }
