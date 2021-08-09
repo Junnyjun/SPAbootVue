@@ -1,40 +1,27 @@
 spring:
   profiles:
-    active: local # 기본 환경 선택
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-  config:
-    use-legacy-processing: true
+    active: local
+
+  datasource:
+    url : jdbc:mariadb://database-1.cp5zb1lapca1.ap-northeast-2.rds.amazonaws.com:3306/webservice
+    username: admin
+    password: dev30368643
+    driver-class-name: org.mariadb.jdbc.Driver
 
   thymeleaf:
     cache: false
     mode: LEGACYHTML5
----
-spring:
-  profiles: local
-  datasource:
-    data: classpath:data-h2.sql # 시작할때 실행시킬 script
+
   jpa:
-    show-sql: true
     hibernate:
       ddl-auto: update
-  h2:
-    console:
-      enabled: true
+    properties:
+      hibernate:
+        default_batch_fetch_size : 50
+        show_sql : true
+        format_sql : true
 
-server:
-  port: 8080
-
-# 운영 환경
----
-spring.profiles: set1
-spring.profiles.include: real-db
-
----
-spring.profiles: set2
-spring.profiles.include: real-db
-
-
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.type : trace
 
