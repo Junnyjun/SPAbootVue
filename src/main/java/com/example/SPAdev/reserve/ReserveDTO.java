@@ -28,4 +28,5 @@ public class ReserveDTO {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate checkOutDate;
 
+    private Status status;
 }

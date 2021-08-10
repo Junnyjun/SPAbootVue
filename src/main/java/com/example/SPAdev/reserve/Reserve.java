@@ -42,6 +42,9 @@ public class Reserve {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate checkOutDate;
 
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
     public void changeName (String name) { this.name = name; }
     public void changePhoneNumber (String phoneNumber) { this.phoneNumber = phoneNumber; }
     public void changeCheckInDate ( LocalDate checkInDate ) { this.checkInDate = checkInDate; }

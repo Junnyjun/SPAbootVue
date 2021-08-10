@@ -2,9 +2,13 @@ package com.example.SPAdev.reserve;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.Null;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -15,9 +19,11 @@ public class ReserveServiceImpl implements ReserveService {
 
     @Override
     public Long save(ReserveDTO reserveDTO) {
+        System.out.println("save 1");
         Reserve reserve = dtoToEntity(reserveDTO);
+        System.out.println("save 2");
         reserveRepository.save(reserve);
-
+        System.out.println("save 3");
         return reserve.getId();
 
     }
@@ -72,6 +78,18 @@ public class ReserveServiceImpl implements ReserveService {
         return reserveDTO;
     }
 
+    @Override
+    public List<ReserveDTO> getListAll() {
+        List<Reserve> resultList = reserveRepository.findAll();
+        List<ReserveDTO> result = new ArrayList<>();
+
+        for (Reserve reserve: resultList) {
+            ReserveDTO reserveDTO = entityToDto(reserve);
+            result.add(reserveDTO);
+        }
+
+        return result;
+    }
 
 
 }
